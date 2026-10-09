@@ -39,10 +39,10 @@ export function Gallery({ limit }: { limit?: number }) {
           </Reveal>
         ))}
       </div>
-      {open !== null && (
+      {open !== null && items[open] && (
         <div role="dialog" aria-modal="true" aria-label="Visualização da imagem" className="fixed inset-0 z-[60] grid place-items-center bg-abyss/95 p-4 backdrop-blur animate-in fade-in" onClick={() => setOpen(null)}>
-          <img src={items[open].src} alt={items[open].alt} className="max-h-[85vh] max-w-full rounded-xl object-contain" onClick={(e) => e.stopPropagation()} />
-          <p className="absolute bottom-6 left-0 right-0 text-center text-sm text-abyss-muted">{items[open].alt}</p>
+          <img src={items[open]!.src} alt={items[open]!.alt} className="max-h-[85vh] max-w-full rounded-xl object-contain" onClick={(e) => e.stopPropagation()} />
+          <p className="absolute bottom-6 left-0 right-0 text-center text-sm text-abyss-muted">{items[open]!.alt}</p>
           <button className="absolute right-5 top-5 grid size-11 place-items-center rounded-full bg-abyss-foreground/10 text-abyss-foreground" onClick={() => setOpen(null)} aria-label="Fechar">
             <X className="size-5" />
           </button>
